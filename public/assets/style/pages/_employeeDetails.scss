@@ -1,0 +1,86 @@
+@use "../vars.scss" as *;
+
+
+.employeeDetails .clients {
+  flex: 1;
+
+  > h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: $primary-f;
+  }
+
+  table {
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    text-transform: capitalize;
+    color: #5D5D5D;
+    text-align: center;
+    width:100%;
+
+    thead {
+      border-bottom: 1px solid #F4F5F6;
+      font-weight: 500;
+      th {padding: 24px 16px 24px;}
+    }
+
+    tbody {
+      td {
+        padding: 20px 0;
+        &:hover {
+          color: $primary;
+        }
+        span {
+          color: white;
+          display: block;
+          max-width: 80px;
+          margin: auto;
+          &.pending {background-color: #F2921F;}
+          &.rejected {background-color: #FE4C13;}
+          &.complete {background-color: #58E0AB;}
+        }
+        &:last-of-type {
+          &:hover{color: #5D5D5D;}
+          svg {
+            cursor: pointer;
+            color: $icons;
+            &:hover {
+              color: $secondry;
+            }
+          }
+          #deleteBtn1:hover svg {
+            color: red;
+          }
+        }
+      }
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #F4F4F4;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .employeeDetails .clients {
+
+    max-width: 100%;
+    overflow-x: scroll;
+    
+    table {
+  
+      thead {
+        th {padding: 24px 16px 24px;}
+        font-size: 12px;
+      }
+  
+      tbody {
+        td {
+          padding: 20px 0;
+          font-size: 12px;
+        }
+      }
+    }
+    
+  }
+}

@@ -1,0 +1,356 @@
+@use "../vars.scss" as *;
+
+.client-details {
+
+  > h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    text-transform: capitalize;
+    color: $secondry;
+  }
+
+  button {
+    background-color: $secondry;
+    padding: 16px 50px;
+    display: block;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    font-weight: 500;
+    @include rad(10px);
+    &:hover {
+      background-color: $primary;
+    }
+
+    &:first-of-type {
+      background-color: transparent;
+      border: 1px solid $icons;
+      color: $icons;
+      &:hover {
+        color: $primary;
+        border-color: $primary;
+      }
+    }
+  }
+
+  .details > div:not(:last-of-type) {
+    border-bottom: 1.23319px solid rgba(222, 222, 222, 0.58);
+  }
+
+  .details {
+
+    @include rad(10px);
+
+    h2 {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      text-transform: capitalize;
+      color: $secondry;
+    }
+
+    .keys {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: capitalize;
+      color: $secondry-f;
+    }
+
+    .values {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: capitalize;
+      color: $secondry;
+    }
+
+    .row .col-6:last-of-type , .row .col-sm-6:last-of-type  {
+      border-left: 1.23319px solid rgba(222, 222, 222, 0.58);
+      padding-left: 24px;
+    }
+  }
+
+  .first {
+    span {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      text-transform: capitalize;
+      color: #BFBFBF;
+    }
+    a {
+      svg {
+        color: #BFBFBF;
+        @include tra(.2s);
+        &:hover {
+          color: $secondry;
+        }
+      }
+      &:last-of-type {
+        svg:hover {
+          color: red;
+        }
+      }
+    }
+  }
+
+  .second {
+    h3 {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      text-transform: capitalize;
+      color: $secondry-f;
+    }
+    .data2 {
+      p {
+        color: #5D5D5D;
+        font-size: 24px;
+      }
+      h2 {
+        font-size: 32px;
+        font-weight: 700;
+        color: $secondry;
+      }
+      h4 {
+        color: $primary;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .scroll {
+    
+    width: 100%;
+    @include rad(10px);
+
+    h2 {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      text-transform: capitalize;
+      color: #2D3245;
+    }
+    
+    table {
+
+      width: 100%;
+
+      th {
+        padding: 18px 0;
+        border-bottom: 1px solid #F6F5F8;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        color: #5D5D5D;
+        text-align: center;
+      }
+      
+      tbody {
+        
+        td {
+          padding: 18px;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 22px;
+          letter-spacing: -0.408px;
+          text-transform: capitalize;
+          color: $primary-f;
+          text-align: center;
+  
+          &:hover {
+            color: $primary;
+          }
+  
+          select {
+            margin: auto;
+            border: none;
+            outline: none;
+            text-transform: capitalize;
+            color: white;
+            display: block;
+            width: 120px;
+            &.pending {background-color: #F2921F;}
+            &.rejected {background-color: #FE4C13;}
+            &.completed {background-color: #58E0AB;}
+            &.accepted {background-color: #18eb69;}
+
+            option {
+              background-color: $icons;
+            }
+          }
+        }
+  
+        td:hover {
+          color: $primary;
+        }
+
+        &:not(:last-of-type) {
+          td {
+            border-bottom: 1px solid #F6F5F8;
+          }
+        }
+        
+      }
+    }
+  }
+}
+
+.add-report {
+  input , select {
+    flex: 1;
+    border: 1px solid #BFBFBF;
+    background: rgba(246, 245, 248, 0.5);
+    @include rad(10px);
+    &::placeholder {
+      color: #686868;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: capitalize;
+    }
+    &:focus {
+      border: 1px solid #F2921F;
+      outline: none;
+    }
+  }
+
+  select {
+    color: #686868;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: capitalize;
+  }
+
+  .input {
+    flex: 1; 
+    position: relative;
+    
+    &.mobileInput {
+      min-width: calc((100% - 32px) / 3);
+      flex: 0;
+    }
+  }
+
+  .btns {margin-top: 40px;}
+
+  .content {
+    padding: 40px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .client-details {
+
+    > h2 {
+      font-size: 16px;
+    }
+  
+    .details {
+    
+      h2 {
+        font-size: 16px;
+      }
+  
+      .keys {
+        font-size: 12px;
+        width: 40%;
+      }
+  
+      .values {
+        font-size: 12px;
+        width: 60%;
+      }
+  
+      .row .col-6:last-of-type , .row .col-sm-6:last-of-type {
+        border: none;
+        padding-left: 12px;
+      }
+    }
+  
+    .first {
+      span {
+        font-size: 14px;
+      }
+    }
+  
+    .second {
+
+      gap: 8px;
+      
+      h3 {
+        font-size: 14px;
+      }
+
+      flex-direction: column;
+      justify-content: center;
+
+      button {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+    }
+    
+    .third .row {
+      gap: 16px;
+    }
+    
+    .scroll {
+    
+      max-width: 100%;
+      overflow-x: scroll;
+  
+      h2 {
+        font-size: 16px;
+      }
+      
+      table {
+
+        th {
+          padding: 18px 0;
+          font-size: 12px;
+        }
+        
+        tbody {
+          
+          td {
+            padding: 18px;
+            font-size: 12px;
+  
+    
+            select {
+              width: 80px;
+            }
+          }
+          
+        }
+      }
+    }
+  }
+  
+  .add-report {
+    input , select {
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+  
+    select {
+      font-size: 12px;
+    }
+  
+    .btns {margin-top: 20px;}
+  
+    .content {
+      padding: 20px !important;
+      .line {
+        flex-direction: column;
+      }
+    }
+  }
+}

@@ -1,0 +1,579 @@
+@use "../vars.scss" as *;
+
+.clients {
+  .page {
+    .latest {
+      .scroll {
+        max-height: calc(100vh - 300.78px);
+        @include rad(10px);
+      }
+      .clients { 
+        .head {
+          .left {
+            position: relative;
+            input {
+              accent-color: $secondry;
+              cursor: pointer;
+            }
+
+            .status {
+              position: relative;
+
+              .menu {
+                position: absolute;
+                background-color: white;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
+                @include rad(10px);
+                z-index: 11;
+                top: 100%;
+                left: 0;
+                width: 94px;
+                overflow: hidden;
+                display: none;
+
+                &.active {
+                  display: block;
+                }
+
+                li {
+                  font-size: 16px;
+                  line-height: 22px;
+                  /* or 138% */
+
+                  letter-spacing: -0.408px;
+                  text-transform: capitalize;
+                  cursor: pointer;
+                  /* dark grey */
+                  
+                  color: #5D5D5D;
+
+                  &:not(:last-of-type) {
+                    border-bottom: 1px solid $light-grey;
+                  }
+
+                  &:hover {
+                    background-color:#f2931f2d;
+                  }
+                  
+                }
+              }
+            }
+
+            .mess-del {
+              position: relative;
+
+              .menu {
+                position: absolute;
+                background-color: white;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
+                @include rad(10px);
+                z-index: 11;
+                top: 110%;
+                left: 0;
+                width: 120px;
+                overflow: hidden;
+                display: none;
+
+                &.active {
+                  display: block;
+                }
+
+                li {
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 22px;
+                  /* or 138% */
+                  
+                  letter-spacing: -0.408px;
+                  text-transform: capitalize;
+                  
+                  /* secondary */
+                  
+                  color: $secondry-f;
+                  cursor: pointer;
+                  
+                  &:not(:last-of-type) {
+                    border-bottom: 1px solid $light-grey;
+                  }
+
+                  &:hover {
+                    color: $secondry;
+                    &:last-of-type {
+                      color: red;
+                    }
+                  }
+                  
+                }
+              }
+            }
+          }
+          .right {
+            h4 {
+              font-size: 16px;
+              line-height: 22px;
+              letter-spacing: -0.408px;
+              text-transform: capitalize;
+              color: $secondry-f;
+            }
+  
+            select {
+              line-height: 22px;
+              letter-spacing: -0.408px;
+              font-size: 16px;
+              text-transform: capitalize;
+              color: $primary-f;
+              width: 217px;
+              outline: none;
+              background-color: white;
+              border: 1px solid $light-grey;
+              @include rad(10px);
+            }
+  
+            a {
+              display: block;
+              padding: 16px 32px;
+              background-color: $secondry;
+              color: white;
+              @include rad(10px);
+              text-transform: capitalize;
+  
+              &:hover {
+                background-color: $primary;
+              }
+            }
+
+            button {
+              color: #2D3245; 
+              border: 1px solid var(--primary, #2D3245); 
+              padding: 12px 32px; 
+              border-radius: 10px; 
+              background-color: transparent;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              color: $secondry;
+
+              &:hover {
+                background-color: rgba(0, 0, 0, 0.114);
+              }
+            }
+            
+          }
+          &.rep {
+
+            border-bottom: 2px solid #F4F5F6;
+            
+            h2 {
+              font-weight: 700;
+              font-size: 20px;
+              line-height: 24px;
+              color: $primary-f;
+            }
+            h3 {
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 22px;
+              color: #5D5D5D;
+            }
+          }
+        }
+
+        tbody {
+
+          input {
+            accent-color: $secondry;
+          }
+          
+          td {
+            padding: 20px 0;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: -0.408px;
+            text-transform: capitalize;
+            color: #5D5D5D;
+
+            &:hover {
+              color: $primary;
+            }
+
+            &:last-of-type {
+              &:hover{color: #5D5D5D;}
+              svg {
+                cursor: pointer;
+                color: $icons;
+                &:hover {
+                  color: $secondry;
+                }
+              }
+              #deleteBtn1:hover svg {
+                color: red;
+              }
+            }
+
+            span {
+              color: white;
+              display: block;
+              max-width: 80px;
+              margin: auto;
+              &.pending {background-color: #F2921F;}
+              &.rejected {background-color: #FE4C13;}
+              &.complete {background-color: #58E0AB;}
+              &.accepted {background-color: #18eb69;}
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.delete-confirm {
+
+  .btns {
+
+    a {
+      padding: 15px 50px;
+      @include rad(10px);
+      cursor: pointer;
+    }
+    a:last-of-type {
+      background-color: $secondry;
+      color: white;
+      &:hover {
+        background-color: $primary;
+      }
+    }
+    a:first-of-type {
+      color: $secondry-f;
+      border: 1px solid $secondry-f;
+      &:hover {
+        color: $primary;
+        border-color: $primary;
+      }
+    }
+  }
+
+}
+
+.upload-excel {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 24px 16px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 10000000000;
+  width: 50%;
+
+  > span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: $icons;
+    &:hover {
+      color: red;
+    }
+  }
+
+  h2 {
+    color: $primary-f;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 32px;
+  }
+
+  h4 {
+    color: $primary-f;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    color: $primary-f;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+
+    li { list-style: decimal; }
+    
+  }
+
+  .upload {
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.049);
+    }
+  }
+  
+  input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  label {
+    width: 100%;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+    border: 1px dashed $secondry-f;
+    cursor: pointer;
+    margin-bottom: 32px;
+    
+    span {
+      color: $secondry-f;
+      padding: 20px 48px;
+      border: 1px solid $secondry-f;
+      font-weight: 700;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+    }
+    border-radius:16px ;
+    -webkit-border-radius:16px ;
+    -moz-border-radius:16px ;
+    -ms-border-radius:16px ;
+    -o-border-radius:16px ;
+  }
+
+  .uploading {
+    span { color: #878787; }
+    .percentage { color: $secondry; font-size: 18px; font-weight: 500; }
+    margin-bottom: 16px;
+  }
+
+  .btns {
+    width: 100%;
+    justify-content: flex-end;
+    
+    button {
+      padding: 15px 52px;
+      font-size: 18px;
+      font-weight: 500;
+
+      &:first-child {
+        color: red;
+        border: 1px solid red;
+        &:hover {
+          background-color: rgba(255, 0, 0, 0.04);
+        }
+      }
+      &:last-child {
+        color: white;
+        border: 1px solid $secondry;
+        background-color: $secondry;
+        &:hover {
+          background-color: transparent;
+          color: $secondry;
+        }
+      }
+      border-radius: 10 px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+  }
+  
+
+  transform: translate(-50% , -50%);
+  -webkit-transform: translate(-50% , -50%);
+  -moz-transform: translate(-50% , -50%);
+  -ms-transform: translate(-50% , -50%);
+  -o-transform: translate(-50% , -50%);
+  background-color: white;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+.editService {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 24px 16px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 10000000000;
+  width: 50%;
+  background-color: whitesmoke;
+
+  > span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: $icons;
+    &:hover {
+      color: red;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: $secondry;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #F6F5F8;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    color: $primary-f;
+  }
+
+  input , select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--icons, #BFBFBF);
+    background: rgba(246, 245, 248, 0.50);
+    outline: none;
+
+    &:hover , &:focus {
+      border-color:$primary ;
+    }
+    
+  }
+
+  .btns {
+    width: 100%;
+    justify-content: flex-end;
+    
+    button {
+      padding: 15px 52px;
+      font-size: 18px;
+      font-weight: 500;
+
+      &:first-child {
+        color: red;
+        border: 1px solid red;
+        &:hover {
+          background-color: rgba(255, 0, 0, 0.04);
+        }
+      }
+      &:last-child {
+        color: white;
+        border: 1px solid $secondry;
+        background-color: $secondry;
+        &:hover {
+          background-color: transparent;
+          color: $secondry;
+        }
+      }
+      border-radius: 10 px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+  }
+
+
+  transform: translate(-50% , -50%);
+  -webkit-transform: translate(-50% , -50%);
+  -moz-transform: translate(-50% , -50%);
+  -ms-transform: translate(-50% , -50%);
+  -o-transform: translate(-50% , -50%);
+  background-color: white;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+
+@media (max-width: 767px) {
+  
+  .clients {
+    max-width: 100%;
+    .page {
+      .latest {
+        .scroll table {
+          max-width: 100%;
+          overflow-x: scroll;
+        }
+        .clients { 
+          .head {
+
+            .right {
+              flex-direction: column-reverse;
+              h4 {
+                font-size: 12px;
+              }
+    
+              select {
+                font-size: 12px;
+                width: auto;
+                padding: 8px 16px !important;
+              }
+    
+              a {
+                padding: 8px 16px;
+                font-size: 12px;
+              }
+            }
+
+            &.rep {
+                
+              h2 {
+                font-size: 16px;
+              }
+              h3 {
+                font-size: 14px;
+              }
+            }
+
+          }
+
+          thead th {
+            font-size: 12px;
+          }
+  
+          tbody {
+            
+            td {
+              padding: 15px 10px !important;
+              font-size: 12px;
+              min-width: 100px;
+            }
+  
+          }
+        }
+      }
+    }
+  }
+  
+  .delete-confirm {
+  
+    .btns {
+  
+      a {
+        padding: 10px 30px;
+        font-size: 16px;
+      }
+
+    }
+  }
+}

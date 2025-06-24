@@ -1,0 +1,176 @@
+@use "../vars.scss" as *;
+
+.company-details {
+
+  .content {
+    @include rad(10px);
+  }
+
+  .name { 
+    
+    border-bottom: 1.23319px solid rgba(222, 222, 222, 0.58);
+    
+    h2 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      text-transform: capitalize;
+
+      /* dark grey */
+
+      color: #5D5D5D;
+    }
+
+    .tools {
+      color: $icons;
+      a {
+        cursor: pointer;
+        &:hover {
+          color: $primary;
+        }
+        &:last-of-type:hover {
+          color: red;
+        }
+      }
+    }
+  }
+
+  .image-data {
+
+    border-bottom: 1.23319px solid rgba(222, 222, 222, 0.58);
+
+    .image {
+      aspect-ratio: 1;
+      @include rad(50%);
+      background-color: $light-grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      max-width: 200px;
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+      
+      img {
+        max-width: 100%;
+        @include tra(.5s);
+      }
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      text-transform: capitalize;
+      color: $primary-f;
+    }
+    h3 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      text-transform: capitalize;
+      color: #5D5D5D;
+    }
+  }
+
+  .info {
+    > h2 {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 22px;
+      /* or 92% */
+
+      letter-spacing: -0.408px;
+      text-transform: capitalize;
+
+      /* primary */
+
+      color: $secondry;
+    }
+    .keys {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: capitalize;
+
+      /* secondary */
+
+      color: $secondry-f;
+    }
+    .values {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: capitalize;
+
+      /* primary */
+
+      color: $secondry;
+    }
+    .col-6:last-of-type , .col-sm-6:last-of-type {
+      border-left: 1.23319px solid rgba(222, 222, 222, 0.58);
+    }
+  }
+
+  .tools {
+    svg:hover {
+      color: $secondry;
+      cursor: pointer;
+    }
+    button svg:hover {
+      color: red;
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  .company-details {
+
+  
+    .name { 
+        
+      h2 {
+        font-size: 14px;
+      }
+
+    }
+  
+    .image-data {
+    
+      .image {
+        max-width: 150px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      h3 {
+        font-size: 14px;
+      }
+      .data {
+        align-items: center;
+      }
+    }
+  
+    .info {
+      > h2 {
+        font-size: 16px;
+      }
+      .keys {
+        font-size: 12px;
+        width: 50%;
+      }
+      .values {
+        font-size: 12px;
+        width: 50%;  
+      }
+      .col-6:last-of-type , .col-sm-6:last-of-type {
+        border-left: none;
+        padding-left: 12px !important;
+      }
+    }
+  }
+}

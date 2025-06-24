@@ -1,0 +1,80 @@
+@use "../vars.scss" as *;
+
+
+.add-company {
+  .group1 {
+    label{
+      position: relative;
+      cursor: pointer;
+      .image {
+        display: block;
+        aspect-ratio: 1;
+        @include rad(50%);
+        background-color: $light-grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        max-width: 200px;
+        max-height: 200px;
+        overflow: hidden;
+  
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+        }
+        
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          @include tra(.5s);
+        }
+      }
+      svg {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
+    }
+  }
+  .group2 {
+    .kk {
+      min-width: calc(50% - 8px);
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .add-company {
+    
+    .group1 {
+      label{
+
+        .image {
+          max-width: 120px;
+          max-height: 120px;
+        }
+      }
+    }
+    .group2 {
+      .kk {
+        min-width: auto;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .add-company {
+    
+    .line {
+      flex-direction: column;
+    } 
+    
+    .group2 {
+      .kk {
+        min-width: 100%;
+      }
+    }
+  }
+}

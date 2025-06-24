@@ -1,0 +1,149 @@
+@use "../vars.scss" as *;
+
+
+.gifts {
+  .company-details {
+    button {
+      width: 100%;
+      padding: 16px 0;
+      background-color: $secondry;
+      color: white;
+      @include rad(10px);
+      @include tra(.5s);
+      border: 1px solid $secondry;
+      text-transform: capitalize;
+  
+      &:hover {
+        background-color: white;
+        color: $secondry;
+      }
+    }
+  }
+  .badge {
+    h4 {
+      color:#5D5D5D;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: normal;
+    }
+    h3 {
+      color:$secondry;
+      font-size: 40px;
+      font-weight: 700;
+      width: fit-content;
+      line-height: normal;
+    }
+  }
+  .image-data {
+    border: none;
+  }
+  .box {
+    @include rad(12px);
+    overflow: hidden;
+    background-color: white;
+    @include tra(.5s);
+
+    .image {
+      img { 
+        width: 100%;
+        aspect-ratio: calc(357px / 240px);
+      }
+    }
+
+    .content {
+      padding: 16px;
+      padding-bottom: 24px;
+      h3 {
+        font-size: 32px;
+        font-weight: 700;
+        color: $primary-f;
+        margin-bottom: 24px;
+      }
+      h5 {
+        font-size: 18px;
+        font-weight: 700;
+        color: $secondry;
+        margin-bottom: 4px !important;
+      }
+      .giftProgress {
+        height: 4px;
+        background-color: #EFEDEB;
+        width: 100%;
+        @include rad(4px);
+        margin-bottom: 40px;
+        span {
+          background-color: $primary;
+          display: block;
+          height: 100%;
+          @include rad(4px);
+        }
+      }
+
+    }
+    
+    &:hover {
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      transform: translateY(-5px);
+      -webkit-transform: translateY(-5px);
+      -moz-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      -o-transform: translateY(-5px);
+    }
+    
+  }
+}
+.prizes {
+  .box {
+    position: relative;
+    .icons {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      align-items: center;
+      flex-direction:row;
+      gap: 12px;
+
+      .icon {
+        background-color: rgba(246, 245, 248, 0.40);
+        padding: 5px;
+        @include rad(50%);
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(246, 245, 248, 0.80);
+        }
+      }
+      
+    }
+    .content {
+      h3 {
+        font-size: 32px !important;
+        font-weight: 700;
+        color: $primary-f;
+        margin-bottom: 16px;
+      }
+      h4 {
+        font-size: 16px ;
+        font-weight: 400;
+        color: $primary-f;
+        margin-bottom: 16px ;
+      }
+      h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: $primary;
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .gifts .image-data h2 {
+    font-size: 24px;
+  }
+  .gifts .image-data h3 {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,193 @@
+@use "../vars.scss" as *;
+
+.add-client {
+
+  > h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    text-transform: capitalize;
+    color: $secondry;
+  }
+
+  .data {
+
+    label {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      text-transform: capitalize;
+      color: #5D5D5D;
+    }
+    
+    .head {
+      h2 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 22px;
+        letter-spacing: -0.408px;
+        text-transform: capitalize;
+        color: $secondry;
+      }
+    }
+
+    .clear {
+      color: $secondry-f;
+      cursor: pointer;
+
+      &:hover {
+        color: red;
+      }
+
+      input[type = "reset"] {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.408px;
+        text-transform: capitalize;
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+
+  .group1 , .group2 , .group3 {
+    margin-bottom: 65px;
+  }
+
+  .top {
+    @include rad(20px);
+  }
+
+  .bottom {
+    .buttons {
+      a , button {
+        padding: 15px 50px;
+        @include rad(10px);
+      }
+      button {
+        background-color: $secondry;
+        color: white;
+        border: 1px solid $secondry;
+        &:hover {
+          color: $secondry-f;
+          background-color: white;
+        }
+      }
+      a {
+        color: $secondry-f;
+        border: 1px solid $secondry-f;
+        &:hover {
+          background-color: red;
+          color: white;
+        }
+      }
+    }
+  }
+  
+  input , select , textarea {
+    flex: 1;
+    border: 1px solid #BFBFBF;
+    background: rgba(246, 245, 248, 0.5);
+    @include rad(10px);
+    &::placeholder {
+      color: #686868;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: capitalize;
+    }
+    &:focus {
+      border: 1px solid #F2921F;
+      outline: none;
+    }
+  }
+
+  select {
+    color: #686868;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: capitalize;
+  }
+
+  .input {
+    flex: 1; 
+    position: relative;
+    
+    &.mobileInput {
+      min-width: calc((100% - 32px) / 3);
+      flex: 0;
+    }
+  }
+}
+
+.invalid-feedback {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+}
+
+
+@media (max-width: 767px) {
+  .add-client {
+
+    .line {
+      flex-direction: column;
+    }
+    
+    > h2 {
+      font-size: 16px;
+    }
+  
+    .data {
+  
+      label {
+        font-size: 14px;
+      }
+      
+      .head {
+        h2 {
+          font-size: 16px;
+        }
+      }
+  
+      .clear {
+        input[type = "reset"] {
+          font-size: 14px;
+        }
+      }
+    }
+  
+    .group1 , .group2 {
+      margin-bottom: 40px;
+    }
+  
+    .bottom {
+      .buttons {
+        a , button {
+          padding: 10px 30px;
+        }
+      }
+    }
+    
+    input , select {
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+  
+    select {
+      font-size: 14px;
+    }
+  
+    // .input {
+    //   flex: 1; 
+    //   position: relative;
+      
+    //   &.mobileInput {
+    //     min-width: calc((100% - 32px) / 3);
+    //     flex: 0;
+    //   }
+    // }
+  }
+}

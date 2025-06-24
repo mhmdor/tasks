@@ -4,16 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- FavIcon -->
     <link rel="icon" type="image/x-icon" href="assets/icons/fav-icon.png">
     <!-- Bootstap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap Icons -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"> -->
     <!-- Main css file -->
     <link rel="stylesheet" href="assets/style/main.css">
+
+    <link href="{{ asset('assets/plugins/sweetalert/sweetalert.css') }}" rel="stylesheet" type="text/css">
+
+
 
 
     <title>Tasks System</title>
@@ -21,7 +28,7 @@
 
 <body>
 
-    <div class="overview d-flex">
+    <div class="overview clients d-flex">
 
         <div class="sidebar d-flex flex-column" id="sidebar">
 
@@ -77,7 +84,7 @@
                     </svg>
                     <span>Tasks</span>
                 </a>
-                <a href="/" class="d-flex align-items-center gap-3 py-2">
+                <a href="{{ asset('categories') }}" class="d-flex align-items-center gap-3 py-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path
                             d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z"
@@ -102,7 +109,7 @@
 
             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"
-                {{ __('Logout') }} class="logout d-flex align-items-center gap-2">
+                class="logout d-flex align-items-center gap-2">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                     <path
@@ -112,8 +119,8 @@
                 logout
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                @csrf
+            </form>
 
         </div>
 
@@ -122,8 +129,7 @@
             <div class="navbar d-flex align-items-center justify-content-between">
 
                 <div class="search">
-                    <i class="bi bi-search"></i>
-                    <input type="search" placeholder="Search">
+                   
                 </div>
 
 
@@ -153,16 +159,28 @@
     </div>
 
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
     <!-- Bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+
+
+
 
     <script src="assets/js/index.js"></script>
+
+    @yield('script')
+
+    <script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/sweetalert/jquery.sweet-alert.custom.js') }}"></script>
 
     <!-- Chart js -->
 
     <script src="assets/js/chart.umd.js"></script>
-
+    {{--
     <script>
 
 
@@ -190,7 +208,7 @@
         });
 
 
-    </script>
+    </script> --}}
 
 </body>
 

@@ -24,3 +24,19 @@ const sidebarBtn = document.getElementById("sidebarBtn")
 sidebarBtn.addEventListener("click" , () => {
   sidebar.classList.toggle("active")
 })
+
+
+function resetForm()
+{
+    $('.error').remove();
+
+    $(':input')
+        .not(':button, :submit, :reset, :checkbox, :radio')
+        .val('');
+
+    if ( $( ":input:checkbox" ).length )
+        $(':input:checkbox').prop('checked', false);
+
+    if ( $( ":input:radio" ).length )
+        $(':input:radio').prop('checked', false);
+}

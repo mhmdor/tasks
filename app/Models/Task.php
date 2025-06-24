@@ -7,6 +7,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Task extends Model
 {
-     use SoftDeletes;
-    //
+    use SoftDeletes;
+
+
+    protected $fillable = [
+        'name',
+        'user_id',
+        'description',
+        'done',
+        'category_id'
+    ];
+
+    public function category()
+    {
+     return   $this->belongsTo(Category::class);
+    }
 }

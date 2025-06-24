@@ -67,7 +67,7 @@
                     </svg>
                     <span>Home</span>
                 </a>
-                <a href="/" class="d-flex align-items-center gap-3 py-2">
+                <a href="{{ asset('tasks') }}" class="d-flex align-items-center gap-3 py-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
                         <path
                             d="M12.1323 7.57373C13.193 8.34521 13.9363 9.39044 13.9363 10.7841V13.2727H17.0333V10.7841C17.0333 8.97566 14.2692 7.90555 12.1323 7.57373Z"

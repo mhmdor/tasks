@@ -20,7 +20,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                     <path d="M6 0H4V4H0V6H4V10H6V6H10V4H6V0Z" fill="currentColor" />
                 </svg>
-                Add New Category
+                Add New Task
             </button>
         </div>
         <!-- Export Excel File -->
@@ -47,7 +47,7 @@
             <div class="modal-content">
                 <div style="background-color:#2D3245" class="modal-header">
                     <div class="col-md-11">
-                        <h4 class="text-white modal-title">Category</h4>
+                        <h4 class="text-white modal-title">Task</h4>
                     </div>
                     <div class="col-md-1">
                         <button type="button" class="btn-close float-start" data-bs-dismiss="modal"
@@ -63,6 +63,33 @@
                                 <label for="name">Name</label>
                                 <input type="text" name="name" id="name" class="form-control" autocomplete="off"
                                     autofocus>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="category_id">Category</label>
+                                <select id="category_id" name="category_id" class="form-control">
+                                    <option value="">choose</option>
+                                    @foreach ($categories as $category_)
+                                        <option value="{{ $category_->id }}">{{ $category_->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="done">Done</label>
+                                <select id="done" name="done" class="form-control">
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea rows="4" cols="50" name="description" id="description"
+                                    class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
